@@ -25,5 +25,10 @@ namespace AlgoritmicsBookFW.StackQuery
         {
             return nElements == 0;
         }
+
+        public virtual bool IsFull()
+        {
+            return a.Length == nElements;
+        }
     }
 }

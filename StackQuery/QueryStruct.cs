@@ -4,7 +4,7 @@ namespace AlgoritmicsBookFW.StackQuery
 {
     public class QueryStruct<T> : BaseStruct<T>
     {
-        int end;
+        protected int end;
 
         public QueryStruct(int maxSize) : base(maxSize)
         {

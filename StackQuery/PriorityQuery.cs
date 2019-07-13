@@ -2,33 +2,44 @@
 
 namespace AlgoritmicsBookFW.StackQuery
 {
-    public class PriorityQuery<T> : BaseStruct<T>
+    public class PriorityQuery<T> : BaseStruct<T> where T : IComparable<T>
     {
-
         public PriorityQuery(int maxSize) : base(maxSize)
         { }
 
         public override void Insert(T item)
         {
-            throw new NotImplementedException();
+            if (nElements == a.Length)
+                throw new Exception("Переполнение");
+            if (nElements == 0)
+                a[nElements++] = item;
+            else
+            {
+                int i = nElements;
+                for (; i >= 0; i--)
+                {
+                    if (item.CompareTo(a[i]) > 0)
+                        a[i + 1] = a[i];
+                    else
+                        break;
+                }
+                a[i] = item;
+                nElements++;
+            }
         }
 
         public override T Peek()
         {
-            throw new NotImplementedException();
+            if (nElements == 0)
+                throw new Exception("Очередь пуста");
+            return a[nElements];
         }
 
         public override T Remove()
         {
-            throw new NotImplementedException();
-        }
-
-        public bool Find(T item, out int index)
-        {
-            index = -1;
-
-
-            return false;
+            if (nElements == 0)
+                throw new Exception("Очередь пуста");
+            return a[--nElements];
         }
     }
 }
