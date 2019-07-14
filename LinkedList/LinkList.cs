@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AlgoritmicsBookFW.LinkedList
 {
-    public class LinkList
+    public class LinkList<T>
     {
+        private NodeOne<T> First;
 
     }
 }
