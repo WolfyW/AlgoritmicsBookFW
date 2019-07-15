@@ -10,5 +10,10 @@ namespace AlgoritmicsBookFW.LinkedList
     {
         public T Data { get; set; }
         public NodeOne<T> Next { get; set; }
+
+        public NodeOne(T data)
+        {
+            Data = data;
+        }
     }
 }
