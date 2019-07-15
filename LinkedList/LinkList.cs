@@ -77,5 +77,17 @@ namespace AlgoritmicsBookFW.LinkedList
                 nodeCurrent = nodeCurrent.Next;
             }
         }
+
+        public void Display()
+        {
+            var node = _first;
+
+            while (node != null)
+            {
+                Console.Write(node.ToString());
+                node = node.Next;
+            }
+            Console.WriteLine();
+        }
     }
 }
