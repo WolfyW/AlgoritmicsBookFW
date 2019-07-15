@@ -78,6 +78,11 @@ namespace AlgoritmicsBookFW.LinkedList
             }
         }
 
+        public T Peek()
+        {
+            return _first.Data;
+        }
+
         public void Display()
         {
             var node = _first;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgoritmicsBookFW.LinkedList
 {
-    class LinkListEnd<T>
+    public class LinkListEnd<T>
     {
         private NodeOne<T> _first;
         private NodeOne<T> _last;
@@ -71,6 +71,16 @@ namespace AlgoritmicsBookFW.LinkedList
                 nodePrevios = nodeCurrent;
                 nodeCurrent = nodeCurrent.Next;
             }
+        }
+
+        public T PeekLast()
+        {
+            return _last.Data;
+        }
+
+        public T PeekFirst()
+        {
+            return _first.Data;
         }
 
         public bool IsEmpty()
