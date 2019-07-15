@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LinkList.cs" />
+    <Compile Include="LinkListEnd.cs" />
     <Compile Include="NodeOne.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
