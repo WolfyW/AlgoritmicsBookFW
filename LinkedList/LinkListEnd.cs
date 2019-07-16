@@ -31,8 +31,8 @@ namespace AlgoritmicsBookFW.LinkedList
             var node = new NodeOne<T>(item);
             if (IsEmpty())
                 _first = node;
-
-            _last.Next = node;
+            else
+                _last.Next = node;
             _last = node;
         }
 

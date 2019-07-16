@@ -8,8 +8,28 @@ namespace AlgoritmicsBookFW.Launcher
         public void Run(string[] args = null)
         {
             int maxSize = 10;
+            WorkWithLinkedQuery(maxSize);
+            WorkWithQuery(maxSize);
             WorkWithDeq(maxSize);
+        }
 
+        private void WorkWithLinkedQuery(int maxSize)
+        {
+            QueryLinkList<long> link = new QueryLinkList<long>();
+
+            for (int i = 0; i < maxSize; i++)
+            {
+                link.Insert(maxSize * 10 * i);
+            }
+
+            while (!link.IsEmpty())
+            {
+                Console.WriteLine(link.Remove());
+            }
+        }
+
+        private void WorkWithQuery(int maxSize)
+        {
             QueryStruct<long> structer;
 
             structer = new QueryStruct<long>(maxSize);
@@ -27,9 +47,6 @@ namespace AlgoritmicsBookFW.Launcher
             structer.Insert(2);
             structer.Display();
             Remove(structer);
-
-
-
         }
 
         private void WorkWithDeq(int maxSize)

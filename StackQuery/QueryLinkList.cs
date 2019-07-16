@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AlgoritmicsBookFW.Interface;
+﻿using AlgoritmicsBookFW.Interface;
 using AlgoritmicsBookFW.LinkedList;
 
 namespace AlgoritmicsBookFW.StackQuery
 {
-    class QueryLinkList<T> : ISQ<T>
+    public class QueryLinkList<T> : ISQ<T>
     {
         private readonly LinkListEnd<T> _linkList;
 
@@ -41,6 +36,5 @@ namespace AlgoritmicsBookFW.StackQuery
         {
             return _linkList.IsEmpty();
         }
-
     }
 }

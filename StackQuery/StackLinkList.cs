@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AlgoritmicsBookFW.Interface;
+﻿using AlgoritmicsBookFW.Interface;
 using AlgoritmicsBookFW.LinkedList;
 
 namespace AlgoritmicsBookFW.StackQuery

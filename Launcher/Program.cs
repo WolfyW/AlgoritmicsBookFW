@@ -10,11 +10,13 @@ namespace AlgoritmicsBookFW.Launcher
     {
         static void Main(string[] args)
         {
-            Sort sort = new Sort();
-            sort.Run();
+            //Sort sort = new Sort();
+            //sort.Run();
 
             StackQuery stack = new StackQuery();
-            sort.Run();
+            stack.Run();
+
+            Console.Read();
         }
     }
 }
