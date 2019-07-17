@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LinkedListTwoWay.cs" />
     <Compile Include="LinkList.cs" />
     <Compile Include="LinkListEnd.cs" />
     <Compile Include="NodeOne.cs" />
+    <Compile Include="NodeTwo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortedLinkList.cs" />
   </ItemGroup>

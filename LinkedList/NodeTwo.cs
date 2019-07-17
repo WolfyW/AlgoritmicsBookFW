@@ -1,11 +1,13 @@
 ﻿namespace AlgoritmicsBookFW.LinkedList
 {
-    public class NodeOne<T>
+    class NodeTwo<T>
     {
         public T Data { get; set; }
-        public NodeOne<T> Next { get; set; }
 
-        public NodeOne(T data)
+        public NodeTwo<T> Next { get; set; }
+        public NodeTwo<T> Previus { get; set; }
+
+        public NodeTwo(T data)
         {
             Data = data;
         }
