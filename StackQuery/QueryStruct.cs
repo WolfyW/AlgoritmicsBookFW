@@ -4,53 +4,53 @@ namespace AlgoritmicsBookFW.StackQuery
 {
     public class QueryStruct<T> : BaseStruct<T>
     {
-        protected int end;
+        private int _end;
 
         public QueryStruct(int maxSize) : base(maxSize)
         {
-            end = 0;
+            _end = 0;
         }
 
         public override void Insert(T item)
         {
-            if (nElements == a.Length)
+            if (NElements == a.Length)
                 throw new Exception("Очередь заполнена");
 
-            if (current == a.Length - 1 && end != 0)
-                current = -1;
+            if (Current == a.Length - 1 && _end != 0)
+                Current = -1;
 
-            a[++current] = item;
-            nElements++;
+            a[++Current] = item;
+            NElements++;
         }
 
         public override T Peek()
         {
-            if (nElements == 0)
+            if (NElements == 0)
                 throw new Exception("Очередь пуста");
 
-            return a[end];
+            return a[_end];
         }
 
         public override T Remove()
         {
-            if (nElements == 0)
+            if (NElements == 0)
                 throw new Exception("Очередь пуста");
 
-            T temp = a[end];
-            end++;
+            T temp = a[_end];
+            _end++;
 
-            if (end == a.Length)
-                end = 0;
+            if (_end == a.Length)
+                _end = 0;
 
-            nElements--;
+            NElements--;
 
             return temp;
         }
 
         public void Display()
         {
-            int index = end;
-            for (int i = 0; i < nElements; i++)
+            int index = _end;
+            for (int i = 0; i < NElements; i++)
             {
                 Console.Write(a[index] + " ");
                 index++;

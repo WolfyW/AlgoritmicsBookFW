@@ -3,7 +3,7 @@ using AlgoritmicsBookFW.LinkedList;
 
 namespace AlgoritmicsBookFW.StackQuery
 {
-    class StackLinkList<T> : ISQ<T>
+    public class StackLinkList<T> : ISQ<T>
     {
         private readonly LinkList<T> _linkList;
 

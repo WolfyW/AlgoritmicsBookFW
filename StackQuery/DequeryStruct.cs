@@ -4,54 +4,54 @@ namespace AlgoritmicsBookFW.StackQuery
 {
     public class DequeryStruct<T>
     {
-        int nElements;
-        T[] a;
+        private int _nElements;
+        private readonly T[] _a;
 
-        int left;
-        int right;
+        private int _left;
+        private int _right;
 
         public DequeryStruct(int maxSize)
         {
-            a = new T[maxSize];
-            left = -1;
-            right = -1;
+            _a = new T[maxSize];
+            _left = -1;
+            _right = -1;
         }
 
         public void InsertLeft(T item)
         {
-            if (nElements == a.Length)
+            if (_nElements == _a.Length)
                 throw new Exception("Заполнено");
 
-            if (left == -1 || IsEmpty())
+            if (_left == -1 || IsEmpty())
             {
-                left = 0;
-                right = 0;
+                _left = 0;
+                _right = 0;
             }
-            else if (!IsEmpty() && left == 0)
-                left = a.Length - 1;
+            else if (!IsEmpty() && _left == 0)
+                _left = _a.Length - 1;
             else
-                left--;
+                _left--;
 
-            nElements++;
-            a[left] = item;
+            _nElements++;
+            _a[_left] = item;
         }
 
         public void InsertRight(T item)
         {
-            if (nElements == a.Length)
+            if (_nElements == _a.Length)
                 throw new Exception("Заполнено");
 
-            if (right == a.Length -1)
-                right = -1;
+            if (_right == _a.Length -1)
+                _right = -1;
 
             if (IsEmpty())
             {
-                left = 0;
-                right = -1;
+                _left = 0;
+                _right = -1;
             }
 
-            nElements++;
-            a[++right] = item;
+            _nElements++;
+            _a[++_right] = item;
         }
 
         public T RemoveLeft()
@@ -59,15 +59,15 @@ namespace AlgoritmicsBookFW.StackQuery
             if (IsEmpty())
                 throw new Exception("Пусто");
 
-            T temp = a[left];
-            a[left] = default(T);
+            T temp = _a[_left];
+            _a[_left] = default(T);
 
-            if (left == a.Length - 1)
-                left = 0;
+            if (_left == _a.Length - 1)
+                _left = 0;
             else
-                left++;
+                _left++;
 
-            nElements--;
+            _nElements--;
             return temp;
 
         }
@@ -77,26 +77,26 @@ namespace AlgoritmicsBookFW.StackQuery
             if (IsEmpty())
                 throw new Exception("Пусто");
 
-            T temp = a[right];
-            a[right] = default(T);
+            T temp = _a[_right];
+            _a[_right] = default(T);
 
-            if (right == 0)
-                right = a.Length - 1;
+            if (_right == 0)
+                _right = _a.Length - 1;
             else
-                right--;
+                _right--;
 
-            nElements--;
+            _nElements--;
             return temp;
         }
 
         public bool IsEmpty()
         {
-            return nElements == 0;
+            return _nElements == 0;
         }
 
         public bool IsFull()
         {
-            return nElements == a.Length;
+            return _nElements == _a.Length;
         }
     }
 }

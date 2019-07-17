@@ -2,7 +2,7 @@
 
 namespace AlgoritmicsBookFW.StackQuery
 {
-    class StackStruct<T> : BaseStruct<T>
+    public class StackStruct<T> : BaseStruct<T>
     {
         public StackStruct(int maxSize) : base (maxSize)
         {    }
@@ -13,26 +13,26 @@ namespace AlgoritmicsBookFW.StackQuery
         /// <param name="item"></param>
         public override void Insert(T item)
         {
-            if (nElements == a.Length)
+            if (NElements == a.Length)
                 throw new OverflowException("Стек переполнен");
-            a[++current] = item;
-            nElements++;
+            a[++Current] = item;
+            NElements++;
         }
 
         public override T Remove()
         {
-            if (nElements == 0)
+            if (NElements == 0)
                 throw new Exception("Стек пуст");
-            T temp = a[current--];
-            nElements--;
+            T temp = a[Current--];
+            NElements--;
             return temp;
         }
 
         public override T Peek()
         {
-            if (nElements == 0)
+            if (NElements == 0)
                 throw new Exception("Стек пуст");
-            return a[current];
+            return a[Current];
         }
     }
 }

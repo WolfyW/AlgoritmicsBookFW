@@ -4,15 +4,15 @@ namespace AlgoritmicsBookFW.StackQuery
 {
     public abstract class BaseStruct<T> : ISQ<T>
     {
-        protected int nElements;
-        protected T[] a;
-        protected int current;
+        protected int NElements;
+        protected readonly T[] a;
+        protected int Current;
 
-        public BaseStruct(int maxElemets)
+        protected BaseStruct(int maxElemets)
         {
-            nElements = 0;
+            NElements = 0;
             a = new T[maxElemets];
-            current = -1;
+            Current = -1;
         }
 
         public abstract void Insert(T item);
@@ -23,12 +23,12 @@ namespace AlgoritmicsBookFW.StackQuery
 
         public virtual bool IsEmpty()
         {
-            return nElements == 0;
+            return NElements == 0;
         }
 
         public virtual bool IsFull()
         {
-            return a.Length == nElements;
+            return a.Length == NElements;
         }
     }
 }

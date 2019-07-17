@@ -9,13 +9,13 @@ namespace AlgoritmicsBookFW.StackQuery
 
         public override void Insert(T item)
         {
-            if (nElements == a.Length)
+            if (NElements == a.Length)
                 throw new Exception("Переполнение");
-            if (nElements == 0)
-                a[nElements++] = item;
+            if (NElements == 0)
+                a[NElements++] = item;
             else
             {
-                int i = nElements;
+                int i = NElements - 1;
                 for (; i >= 0; i--)
                 {
                     if (item.CompareTo(a[i]) > 0)
@@ -23,23 +23,23 @@ namespace AlgoritmicsBookFW.StackQuery
                     else
                         break;
                 }
-                a[i] = item;
-                nElements++;
+                a[i + 1] = item;
+                NElements++;
             }
         }
 
         public override T Peek()
         {
-            if (nElements == 0)
+            if (NElements == 0)
                 throw new Exception("Очередь пуста");
-            return a[nElements];
+            return a[NElements];
         }
 
         public override T Remove()
         {
-            if (nElements == 0)
+            if (NElements == 0)
                 throw new Exception("Очередь пуста");
-            return a[--nElements];
+            return a[--NElements];
         }
     }
 }
