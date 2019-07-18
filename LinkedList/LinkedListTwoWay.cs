@@ -13,7 +13,7 @@ namespace AlgoritmicsBookFW.LinkedList
 
         public void InsertFirst(T item)
         {
-            NodeTwo<T> newNode = new NodeTwo<T>(item);
+            var newNode = new NodeTwo<T>(item);
 
             if (isEmpty())
             {
@@ -29,7 +29,7 @@ namespace AlgoritmicsBookFW.LinkedList
 
         public void InsertLast(T item)
         {
-            NodeTwo<T> newNode = new NodeTwo<T>(item);
+            var newNode = new NodeTwo<T>(item);
 
             if (isEmpty())
             {
@@ -43,19 +43,59 @@ namespace AlgoritmicsBookFW.LinkedList
             _last = newNode;
         }
 
-        public void RemoveFirst()
+        public T RemoveFirst()
         {
-            
+            if (isEmpty())
+                throw new Exception("Список пуст");
+            var node = _first;
+
+            if (_first.Next == null)
+                _last = null;
+            else
+                _first.Next.Previus = null;
+
+            _first = _first.Next;
+
+            return node.Data;
         }
 
-        public void RemoveLast()
+        public T RemoveLast()
         {
-            
+            if (isEmpty())
+                throw new Exception("Список пуст");
+
+            var node = _last;
+
+            if (_first.Next == null)
+                _first = null;
+            else
+                _last.Previus.Next = null;
+            _last = _last.Previus;
+
+            return node.Data;
         }
 
         public void RemoveByKey(T key)
         {
-            
+            if (isEmpty())
+                throw new Exception("Список пуст");
+            var node = _first;
+
+            while (!node.Data.Equals(key))
+            {
+                node = node.Next;
+                if (node == null)
+                    return;
+            }
+            if (node == _first)
+                _first = _first.Next;
+            else
+                node.Previus.Next = node.Next;
+
+            if (node == _last)
+                _last = node.Previus;
+            else
+                node.Next.Previus = node.Previus;
         }
 
         public bool isEmpty()
