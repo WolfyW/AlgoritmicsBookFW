@@ -1,6 +1,6 @@
 ﻿namespace AlgoritmicsBookFW.LinkedList
 {
-    class NodeTwo<T>
+    public class NodeTwo<T>
     {
         public T Data { get; set; }
 
