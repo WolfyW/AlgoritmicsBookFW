@@ -1,21 +1,22 @@
 ﻿using System;
+using AlgoritmicsBookFW.Iterator;
 
 namespace AlgoritmicsBookFW.LinkedList
 {
     public class LinkList<T>
     {
-        private NodeOne<T> _first;
+        public NodeOne<T> First { get; private set; }
 
         public LinkList()
         {
-            _first = null;
+            First = null;
         }
 
         public void AddFirst(T item)
         {
             var node = new NodeOne<T>(item);
-            node.Next = _first;
-            _first = node;
+            node.Next = First;
+            First = node;
         }
 
         public T DeleteFirst()
@@ -23,14 +24,14 @@ namespace AlgoritmicsBookFW.LinkedList
             if (IsEmpty())
                 throw new Exception("Пустой список");
 
-            var temp = _first;
-            _first = _first.Next;
+            var temp = First;
+            First = First.Next;
             return temp.Data;
         }
 
         public bool IsEmpty()
         {
-            return _first == null;
+            return First == null;
         }
 
         public NodeOne<T> Find(T key)
@@ -38,7 +39,7 @@ namespace AlgoritmicsBookFW.LinkedList
             if(IsEmpty())
                 throw new Exception("Список пустой");
 
-            var node = _first;
+            var node = First;
             while (node != null)
             {
                 if (node.Data.Equals(key))
@@ -56,15 +57,15 @@ namespace AlgoritmicsBookFW.LinkedList
             if (IsEmpty())
                 throw new Exception("Пустой список");
 
-            var nodeCurrent = _first;
-            var nodePrevios = _first;
+            var nodeCurrent = First;
+            var nodePrevios = First;
 
             while (!IsEmpty())
             {
                 if (nodeCurrent.Data.Equals(key))
                 {
-                    if (nodeCurrent == _first)
-                        _first = _first.Next;
+                    if (nodeCurrent == First)
+                        First = First.Next;
                     else
                         nodePrevios.Next = nodeCurrent.Next;
                     break;
@@ -76,12 +77,12 @@ namespace AlgoritmicsBookFW.LinkedList
 
         public T Peek()
         {
-            return _first.Data;
+            return First.Data;
         }
 
         public void Display()
         {
-            var node = _first;
+            var node = First;
 
             while (node != null)
             {
@@ -89,6 +90,11 @@ namespace AlgoritmicsBookFW.LinkedList
                 node = node.Next;
             }
             Console.WriteLine();
+        }
+
+        public Iterator<T> GetIterator()
+        {
+            return new Iterator<T>(this);
         }
     }
 }

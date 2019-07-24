@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Iterator.cs" />
     <Compile Include="LinkedListTwoWay.cs" />
     <Compile Include="LinkList.cs" />
     <Compile Include="LinkListEnd.cs" />

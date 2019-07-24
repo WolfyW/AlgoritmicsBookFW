@@ -15,26 +15,36 @@ namespace AlgoritmicsBookFW.Iterator
 
     public class Iterator<T>
     {
-        private LinkList<T> node;
-        private NodeOne<T> current;
-        private NodeOne<T> priviois;
+        private readonly LinkList<T> _list;
+        private NodeOne<T> _current;
+        private NodeOne<T> _priviois;
+
+        public Iterator(LinkList<T> list)
+        {
+            _list = list;
+            Reset();
+        }
 
         public void Reset()
         {
-            current = node.
+            _current = _list.First;
         }
 
         public void MoveNext()
         {
-            current = current.Next;
+            _priviois = _current;
+            _current = _current.Next;
         }
 
         /// <internalonly/>
         public T GetCurrent()
         {
-            return current.Data;
+            return _current.Data;
         }
 
-
+        public bool AtEnd()
+        {
+            return _current.Next == null;
+        }
     }
 }
