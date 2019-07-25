@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using AlgoritmicsBookFW.LinkedList;
-
-namespace AlgoritmicsBookFW.Iterator
+﻿namespace AlgoritmicsBookFW.LinkedList
 {
-    public interface IIterator
+    public interface IIterator<T>
     {
-
+        void MoveNext();
+        T GetCurrent();
+        void Reset();
     }
 
-    public class Iterator<T>
+    public class Iterator<T> : IIterator<T>
     {
         private readonly LinkList<T> _list;
         private NodeOne<T> _current;
