@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Launcher", "Launcher\Launch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList", "LinkedList\LinkedList.csproj", "{B89D500E-0B75-49D8-B8ED-35844F7E25D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recurection", "Recurection\Recurection.csproj", "{888ECB17-8E99-4E20-8B90-04CAE88A0584}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B89D500E-0B75-49D8-B8ED-35844F7E25D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B89D500E-0B75-49D8-B8ED-35844F7E25D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B89D500E-0B75-49D8-B8ED-35844F7E25D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{888ECB17-8E99-4E20-8B90-04CAE88A0584}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888ECB17-8E99-4E20-8B90-04CAE88A0584}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888ECB17-8E99-4E20-8B90-04CAE88A0584}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888ECB17-8E99-4E20-8B90-04CAE88A0584}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
