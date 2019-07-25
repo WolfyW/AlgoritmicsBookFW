@@ -1,12 +1,5 @@
-﻿namespace AlgoritmicsBookFW.LinkedList
+﻿namespace AlgoritmicsBookFW.LinkedList.Iterators
 {
-    public interface IIterator<T>
-    {
-        void MoveNext();
-        T GetCurrent();
-        void Reset();
-    }
-
     public class Iterator<T> : IIterator<T>
     {
         private readonly LinkList<T> _list;
