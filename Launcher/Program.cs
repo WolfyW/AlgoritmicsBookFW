@@ -19,6 +19,9 @@ namespace AlgoritmicsBookFW.Launcher
             LinkingList list = new LinkingList();
             list.Run();
 
+            LinkingListTwoWay listTwo = new LinkingListTwoWay();
+            listTwo.Run();
+
             Console.Read();
         }
     }

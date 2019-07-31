@@ -24,7 +24,7 @@ namespace AlgoritmicsBookFW.StackQuery
 
         public T Remove()
         {
-            return _linkList.DeleteFirst();
+            return _linkList.RemoveFirst();
         }
 
         public bool IsEmpty()

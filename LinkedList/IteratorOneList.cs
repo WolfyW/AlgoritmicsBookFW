@@ -8,22 +8,13 @@ using AlgoritmicsBookFW.LinkedList;
 
 namespace AlgoritmicsBookFW.Iterator
 {
-    public interface IIterator<T>
-    {
-        bool MoveNext();
-        T GetCurrent();
-        bool AtEnd();
-        void AddAfter(T item);
-        void AddBefore(T item);
-    }
-
-    public class Iterator<T> : IIterator<T>
+    public class IteratorOneList<T> : IIterator<T>
     {
         private readonly LinkList<T> _list;
         private NodeOne<T> _current;
         private NodeOne<T> _priviois;
 
-        public Iterator(LinkList<T> list)
+        public IteratorOneList(LinkList<T> list)
         {
             _list = list;
             Reset();
