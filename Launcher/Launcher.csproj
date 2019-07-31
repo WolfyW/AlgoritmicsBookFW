@@ -57,6 +57,10 @@
       <Project>{a9190b8f-533d-46ca-aff4-782c9a10cc46}</Project>
       <Name>ISortFunction</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LinkedList\LinkedList.csproj">
+      <Project>{b89d500e-0b75-49d8-b8ed-35844f7e25d0}</Project>
+      <Name>LinkedList</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SortingApp\SortingApp.csproj">
       <Project>{0d17cfb5-de59-4a2a-b881-8c02d4fc4b0a}</Project>
       <Name>SortingApp</Name>

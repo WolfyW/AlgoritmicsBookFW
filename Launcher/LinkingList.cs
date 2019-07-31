@@ -1,12 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AlgoritmicsBookFW.LinkedList;
 
 namespace AlgoritmicsBookFW.Launcher
 {
     class LinkingList
     {
+        public void Run()
+        {
+            LinkList<long> list = new LinkList<long>();
+            Console.WriteLine("Fill list");
+            FillList(list);
+            var iter = list.GetIterator();
+            int count = 1;
+            while (true)
+            {
+                if (count % 10 == 0)
+                    Console.WriteLine();
+                var it = iter.GetCurrent();
+                Console.Write(it + " ");
+                bool res = iter.MoveNext();
+                if (res == false)
+                    break;
+                count++;
+            }
+            Console.WriteLine("End");
+            DeleteFromList(list);
+        }
+
+        private void FillList(LinkList<long> list)
+        {
+            Random rnd = new Random();
+            for (int i =0; i < 10; i++)
+            {
+                long item = rnd.Next(100, 999);
+                list.AddFirst(item);
+            }
+        }
+
+
+        private void DeleteFromList(LinkList<long> list)
+        {
+            while (!list.IsEmpty())
+            {
+                Console.WriteLine("delete: " + list.DeleteFirst());
+            }
+        }
+        
+        
     }
 }
