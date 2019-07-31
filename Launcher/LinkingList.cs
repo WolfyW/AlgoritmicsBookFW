@@ -23,7 +23,17 @@ namespace AlgoritmicsBookFW.Launcher
                     break;
                 count++;
             }
+            iter.Reset();
             Console.WriteLine("End");
+            iter.MoveNext();
+            iter.MoveNext();
+            iter.AddBefore(20l);
+            iter.MoveNext();
+            iter.MoveNext();
+            iter.AddAfter(15l);
+
+            list.DeleteKey(15l);
+
             DeleteFromList(list);
         }
 

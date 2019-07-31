@@ -13,7 +13,8 @@ namespace AlgoritmicsBookFW.Iterator
         bool MoveNext();
         T GetCurrent();
         bool AtEnd();
-
+        void AddAfter(T item);
+        void AddBefore(T item);
     }
 
     public class Iterator<T> : IIterator<T>
@@ -31,6 +32,20 @@ namespace AlgoritmicsBookFW.Iterator
         public void Reset()
         {
             _current = _list.First;
+        }
+
+        public void AddBefore(T item)
+        {
+            NodeOne<T> newnode = new NodeOne<T>(item);
+            _priviois.Next = newnode;
+            newnode.Next = _current;
+        }
+
+        public void AddAfter(T item)
+        {
+            NodeOne<T> newNode = new NodeOne<T>(item);
+            newNode.Next = _current.Next.Next;
+            _current.Next = newNode;
         }
 
         public bool MoveNext()
