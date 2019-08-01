@@ -6,34 +6,34 @@ using System.Threading.Tasks;
 
 namespace AlgoritmicsBookFW.LinkedList
 {
-    class LinkedListTwoWay<T>
+    public class LinkedListTwoWay<T>
     {
-        private NodeTwo<T> _first;
+        public NodeTwo<T> First { get; private set; }
         private NodeTwo<T> _last;
 
-        public void InsertFirst(T item)
+        public void AddFirst(T item)
         {
             var newNode = new NodeTwo<T>(item);
 
-            if (isEmpty())
+            if (IsEmpty())
             {
                 _last = newNode;
             }
             else
             {
-                _first.Previus = newNode;
+                First.Previus = newNode;
             }
-            newNode.Next = _first;
-            _first = newNode;
+            newNode.Next = First;
+            First = newNode;
         }
 
-        public void InsertLast(T item)
+        public void AddLast(T item)
         {
             var newNode = new NodeTwo<T>(item);
 
-            if (isEmpty())
+            if (IsEmpty())
             {
-                _first = newNode;
+                First = newNode;
             }
             else
             {
@@ -45,29 +45,29 @@ namespace AlgoritmicsBookFW.LinkedList
 
         public T RemoveFirst()
         {
-            if (isEmpty())
+            if (IsEmpty())
                 throw new Exception("Список пуст");
-            var node = _first;
+            var node = First;
 
-            if (_first.Next == null)
+            if (First.Next == null)
                 _last = null;
             else
-                _first.Next.Previus = null;
+                First.Next.Previus = null;
 
-            _first = _first.Next;
+            First = First.Next;
 
             return node.Data;
         }
 
         public T RemoveLast()
         {
-            if (isEmpty())
+            if (IsEmpty())
                 throw new Exception("Список пуст");
 
             var node = _last;
 
-            if (_first.Next == null)
-                _first = null;
+            if (First.Next == null)
+                First = null;
             else
                 _last.Previus.Next = null;
             _last = _last.Previus;
@@ -75,11 +75,11 @@ namespace AlgoritmicsBookFW.LinkedList
             return node.Data;
         }
 
-        public void RemoveByKey(T key)
+        public void RemoveKey(T key)
         {
-            if (isEmpty())
+            if (IsEmpty())
                 throw new Exception("Список пуст");
-            var node = _first;
+            var node = First;
 
             while (!node.Data.Equals(key))
             {
@@ -87,8 +87,8 @@ namespace AlgoritmicsBookFW.LinkedList
                 if (node == null)
                     return;
             }
-            if (node == _first)
-                _first = _first.Next;
+            if (node == First)
+                First = First.Next;
             else
                 node.Previus.Next = node.Next;
 
@@ -98,19 +98,24 @@ namespace AlgoritmicsBookFW.LinkedList
                 node.Next.Previus = node.Previus;
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
-            return _first == null;
+            return First == null;
         }
 
         public void Display()
         {
-            NodeTwo<T> node = _first;
+            NodeTwo<T> node = First;
             while (node != null)
             {
                 Console.WriteLine(node);
                 node = node.Next;
             }
+        }
+
+        public IIterator<T> GetIterator()
+        {
+            return new IteratorTwoList<T>(this);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace AlgoritmicsBookFW.LinkedList
             First = node;
         }
 
-        public T DeleteFirst()
+        public T RemoveFirst()
         {
             if (IsEmpty())
                 throw new Exception("Пустой список");
@@ -52,7 +52,7 @@ namespace AlgoritmicsBookFW.LinkedList
             return null;
         }
 
-        public void DeleteKey(T key)
+        public void RemoveKey(T key)
         {
             if (IsEmpty())
                 throw new Exception("Пустой список");
@@ -92,9 +92,9 @@ namespace AlgoritmicsBookFW.LinkedList
             Console.WriteLine();
         }
 
-        public Iterator<T> GetIterator()
+        public IteratorOneList<T> GetIterator()
         {
-            return new Iterator<T>(this);
+            return new IteratorOneList<T>(this);
         }
     }
 }
