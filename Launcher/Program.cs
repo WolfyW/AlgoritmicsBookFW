@@ -16,11 +16,14 @@ namespace AlgoritmicsBookFW.Launcher
             //StackQuery stack = new StackQuery();
             //stack.Run();
             
-            LinkingList list = new LinkingList();
-            list.Run();
+            //LinkingList list = new LinkingList();
+            //list.Run();
 
-            LinkingListTwoWay listTwo = new LinkingListTwoWay();
-            listTwo.Run();
+            //LinkingListTwoWay listTwo = new LinkingListTwoWay();
+            //listTwo.Run();
+
+            Recur re = new Recur();
+            re.Run();
 
             Console.Read();
         }
