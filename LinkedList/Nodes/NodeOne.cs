@@ -1,4 +1,4 @@
-﻿namespace AlgoritmicsBookFW.LinkedList
+﻿namespace AlgoritmicsBookFW.LinkedList.Nodes
 {
     public class NodeOne<T>
     {

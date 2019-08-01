@@ -1,4 +1,6 @@
-﻿namespace AlgoritmicsBookFW.LinkedList
+﻿using AlgoritmicsBookFW.LinkedList.Nodes;
+
+namespace AlgoritmicsBookFW.LinkedList.Iterator
 {
     public class IteratorTwoList<T> : IIterator<T>
     {

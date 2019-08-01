@@ -40,14 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IIterator.cs" />
-    <Compile Include="IteratorOneList.cs" />
-    <Compile Include="IteratorTwoList.cs" />
+    <Compile Include="Iterator\IIterator.cs" />
+    <Compile Include="Iterator\IteratorOneList.cs" />
+    <Compile Include="Iterator\IteratorTwoList.cs" />
     <Compile Include="LinkedListTwoWay.cs" />
     <Compile Include="LinkList.cs" />
     <Compile Include="LinkListEnd.cs" />
-    <Compile Include="NodeOne.cs" />
-    <Compile Include="NodeTwo.cs" />
+    <Compile Include="Nodes\NodeOne.cs" />
+    <Compile Include="Nodes\NodeTwo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortedLinkList.cs" />
   </ItemGroup>

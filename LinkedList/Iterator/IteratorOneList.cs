@@ -1,6 +1,9 @@
-﻿namespace AlgoritmicsBookFW.LinkedList.Iterators
+﻿using AlgoritmicsBookFW.LinkedList.Iterator;
+using AlgoritmicsBookFW.LinkedList.Nodes;
+
+namespace AlgoritmicsBookFW.LinkedList.Iterators
 {
-    public class Iterator<T> : IIterator<T>
+    public class IteratorOneList<T> : IIterator<T>
     {
         private readonly LinkList<T> _list;
         private NodeOne<T> _current;
