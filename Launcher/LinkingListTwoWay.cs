@@ -27,12 +27,12 @@ namespace AlgoritmicsBookFW.Launcher
             Console.WriteLine("End");
             iter.MoveNext();
             iter.MoveNext();
-            iter.AddBefore(20l);
+            iter.AddBefore(20L);
             iter.MoveNext();
             iter.MoveNext();
-            iter.AddAfter(15l);
+            iter.AddAfter(15L);
 
-            list.RemoveKey(15l);
+            list.RemoveKey(15L);
 
             list.AddLast(1);
             list.AddLast(2);
