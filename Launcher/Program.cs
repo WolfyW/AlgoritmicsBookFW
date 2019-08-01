@@ -25,6 +25,8 @@ namespace AlgoritmicsBookFW.Launcher
             Recur re = new Recur();
             re.Run();
 
+
+
             Console.Read();
         }
     }

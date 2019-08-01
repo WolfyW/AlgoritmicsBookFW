@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factorial.cs" />
+    <Compile Include="IRecurectionMath.cs" />
     <Compile Include="TriangleNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

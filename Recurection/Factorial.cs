@@ -1,11 +1,11 @@
 ﻿namespace AlgoritmicsBookFW.Recurection
 {
-    public class TriangleNumbers : IRecurectionMath
+    public class Factorial : IRecurectionMath
     {
         public long ResultRec { get; private set; }
         public long ResultNotRec { get; private set; }
-
-        public TriangleNumbers(int number)
+        
+        public Factorial(int number)
         {
             ResultRec = MathWithRec(number);
             ResultNotRec = MathWithoutRec(number);
@@ -16,16 +16,17 @@
             if (number == 1)
                 return 1;
             else
-                return number + MathWithRec(number - 1);
+                return number * MathWithRec(number - 1);
         }
 
         public long MathWithoutRec(int number)
         {
-            long total = 0;
-            while (number > 0)
+            long total = 1;
+            int n = 1;
+            while (number >= n)
             {
-                total += number;
-                number--;
+                total *= n;
+                n++;
             }
 
             return total;
