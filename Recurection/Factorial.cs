@@ -1,6 +1,6 @@
 ﻿namespace AlgoritmicsBookFW.Recurection
 {
-    public class Factorial : IRecurectionMath
+    public class Factorial : IRecurectionMath<long, int>
     {
         public long ResultRec { get; private set; }
         public long ResultNotRec { get; private set; }

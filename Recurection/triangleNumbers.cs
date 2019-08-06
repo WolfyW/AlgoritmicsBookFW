@@ -1,6 +1,6 @@
 ﻿namespace AlgoritmicsBookFW.Recurection
 {
-    public class TriangleNumbers : IRecurectionMath
+    public class TriangleNumbers : IRecurectionMath<long, int>
     {
         public long ResultRec { get; private set; }
         public long ResultNotRec { get; private set; }

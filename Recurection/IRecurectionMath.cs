@@ -1,11 +1,11 @@
 ﻿namespace AlgoritmicsBookFW.Recurection
 {
-    public interface IRecurectionMath
+    public interface IRecurectionMath<TRes, TKey>
     {
-        long ResultRec { get; }
-        long ResultNotRec { get; }
+        TRes ResultRec { get; }
+        TRes ResultNotRec { get; }
 
-        long MathWithRec(int number);
-        long MathWithoutRec(int number);
+        TRes MathWithRec(TKey number);
+        TRes MathWithoutRec(TKey number);
     }
 }

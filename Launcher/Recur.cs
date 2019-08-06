@@ -20,9 +20,24 @@ namespace AlgoritmicsBookFW.Launcher
 
             MathRrcuration(fac);
 
+            Console.WriteLine("Anagramm");
+            Anagramm("cat");
+            Anagramm("Мария");
+
+
         }
 
-        public void MathRrcuration(IRecurectionMath rec)
+        public void Anagramm(string word)
+        {
+            AnagrammRecurection anagramm = new AnagrammRecurection(word);
+            foreach (var item in anagramm.AnagrammWords)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+        public void MathRrcuration(IRecurectionMath<long, int> rec)
         {
             Console.WriteLine(rec.ResultRec);
             Console.WriteLine(rec.ResultNotRec);
