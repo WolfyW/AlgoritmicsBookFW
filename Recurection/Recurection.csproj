@@ -42,7 +42,11 @@
   <ItemGroup>
     <Compile Include="AnagrammRecurection.cs" />
     <Compile Include="Factorial.cs" />
+    <Compile Include="HanoyTower\Disk.cs" />
+    <Compile Include="HanoyTower\HanoyTower.cs" />
+    <Compile Include="HanoyTower\Stick.cs" />
     <Compile Include="IRecurectionMath.cs" />
+    <Compile Include="RecurectionBinarySearch.cs" />
     <Compile Include="TriangleNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

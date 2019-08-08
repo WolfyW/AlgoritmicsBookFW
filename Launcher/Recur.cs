@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AlgoritmicsBookFW.Recurection;
+using AlgoritmicsBookFW.Recurection.HanoyTower;
+
 
 namespace AlgoritmicsBookFW.Launcher
 {
@@ -24,7 +26,14 @@ namespace AlgoritmicsBookFW.Launcher
             Anagramm("cat");
             Anagramm("Мария");
 
+            Console.WriteLine("Recuraction Search");
+            RecurectionBinarySearch search = new RecurectionBinarySearch();
+            search.MathWithRec(750);
+            search.MathWithoutRec(750);
+            Console.WriteLine(search.ResultNotRec);
+            Console.WriteLine(search.ResultRec);
 
+            HanoyTowerRecur tower = new HanoyTowerRecur(4, false);
         }
 
         public void Anagramm(string word)
@@ -34,7 +43,6 @@ namespace AlgoritmicsBookFW.Launcher
             {
                 Console.WriteLine(item);
             }
-
         }
 
         public void MathRrcuration(IRecurectionMath<long, int> rec)
@@ -44,6 +52,5 @@ namespace AlgoritmicsBookFW.Launcher
             Console.WriteLine(rec.MathWithRec(20));
             Console.WriteLine(rec.MathWithoutRec(20));
         }
-
     }
 }
