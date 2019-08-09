@@ -9,9 +9,9 @@ namespace AlgoritmicsBookFW.Launcher
     {
         public void Run(string[] args = null)
         {
-            int maxSize = 5000;
+            int maxSize = 50000;
 
-            //ExecuteSortWithDisplay(new InsertSort<long>(maxSize), FillRandomArray, maxSize, "Bubble sort Random");
+            ExecuteSortWithDisplay(new MergeSort<long>(25), FillRandomArray, 25, "Merge sort Random");
 
             ExecuteSort(FillRandomArray, maxSize, "Random");
             ExecuteSort(FillArr, maxSize, "Ended");
@@ -43,6 +43,11 @@ namespace AlgoritmicsBookFW.Launcher
             arr1 = new InsertSort<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Insert sort " + message);
+            Console.WriteLine();
+
+            arr1 = new MergeSort<long>(maxSize);
+            Fill(arr1, maxSize);
+            SortArr(arr1, "Merge sort " + message);
             Console.WriteLine();
         }
 
