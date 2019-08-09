@@ -1,6 +1,8 @@
-﻿namespace AlgoritmicsBookFW.SortingApp
+﻿using System;
+
+namespace AlgoritmicsBookFW.SortingApp
 {
-    public class BubbleArray : HArray<long>
+    public class BubbleArray<T> : HArray<T> where T : IComparable<T>
     {
         public BubbleArray(int maxElement) : base(maxElement)
         { }
@@ -12,13 +14,13 @@
             {
                 for (inner = 0; inner < outerR; inner++)
                 {
-                    if (a[inner] > a[inner + 1])
+                    if (a[inner].CompareTo(a[inner + 1]) > 0)
                         Swap(inner, inner + 1);
                 }
 
                 for (inner = outerR; inner > outerL; inner--)
                 {
-                    if (a[inner] < a[inner - 1])
+                    if (a[inner].CompareTo(a[inner - 1]) < 0)
                         Swap(inner, inner - 1);
                 }
             }

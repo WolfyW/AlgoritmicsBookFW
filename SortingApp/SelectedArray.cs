@@ -1,6 +1,8 @@
-﻿namespace AlgoritmicsBookFW.SortingApp
+﻿using System;
+
+namespace AlgoritmicsBookFW.SortingApp
 {
-    public class SelectedArray : HArray<long>
+    public class SelectedArray<T> : HArray<T> where T : IComparable<T>
     {
         public SelectedArray(int maxElements) : base(maxElements)
         { }
@@ -13,7 +15,7 @@
                 min = outer;
                 for (inner = outer + 1; inner < nElements; inner++)
                 {
-                    if (a[inner] < a[min])
+                    if (a[inner].CompareTo(a[min]) < 0)
                         min = inner;
                 }
                 Swap(outer, min);

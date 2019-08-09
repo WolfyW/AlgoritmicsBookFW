@@ -2,7 +2,7 @@
 
 namespace AlgoritmicsBookFW.SortingApp
 {
-    public class InsertSort : HArray<long>
+    public class InsertSort<T> : HArray<T> where T : IComparable<T>
     {
         public InsertSort(int maxItem) : base(maxItem)
         { }
@@ -12,9 +12,9 @@ namespace AlgoritmicsBookFW.SortingApp
             int outer, inner;
             for (outer = 1; outer < nElements; outer++)
             {
-                long temp = a[outer];
+                T temp = a[outer];
                 inner = outer;
-                while(inner > 0 && a[inner - 1] >= temp )
+                while(inner > 0 && a[inner - 1].CompareTo(temp) >= 0)
                 {
                     a[inner] = a[inner - 1];
                     inner--;
@@ -24,15 +24,34 @@ namespace AlgoritmicsBookFW.SortingApp
             IsSorted = true;
         }
 
+
         public double Median()
         {
             if (!IsSorted)
                 throw new Exception();
 
-            if (a.Length % 2 == 1)
-                return a[a.Length / 2];
+            dynamic t;
+
+            if (this is InsertSort<long>)
+            {
+                t = a as long[];
+            }
+            else if (this is InsertSort<int>)
+            {
+                t = a as int[];
+            }
+            else if (this is InsertSort<double>)
+            {
+                t = a as double[];
+            }
             else
-                return 0.5 * (a[a.Length / 2 - 1] + a[a.Length / 2]);
+                throw new Exception();
+
+
+            if (t.Length % 2 == 1)
+                return t[t.Length / 2];
+            else
+                return 0.5 * (t[t.Length / 2 - 1] + t[t.Length / 2]);
         }
 
         public void Nodups()
@@ -44,7 +63,7 @@ namespace AlgoritmicsBookFW.SortingApp
             int count = 0;
             for (int i = 1; i < nElements; i++)
             {
-                while (a[p] == a[i])
+                while (a[p].Equals(a[i]))
                 {
                     count++;
                     i++;

@@ -9,13 +9,13 @@ namespace AlgoritmicsBookFW.Launcher
     {
         public void Run(string[] args = null)
         {
-            int maxSize = 20;
+            int maxSize = 5000;
 
-            ExecuteSortWithDisplay(new InsertSort(maxSize), FillRandomArray, maxSize, "Bubble sort Random");
+            //ExecuteSortWithDisplay(new InsertSort<long>(maxSize), FillRandomArray, maxSize, "Bubble sort Random");
 
-            //ExecuteSort(FillRandomArray, maxSize, "Random");
-            //ExecuteSort(FillArr, maxSize, "Ended");
-            //ExecuteSort(FillSortedArr, maxSize, "Sorted");
+            ExecuteSort(FillRandomArray, maxSize, "Random");
+            ExecuteSort(FillArr, maxSize, "Ended");
+            ExecuteSort(FillSortedArr, maxSize, "Sorted");
 
             Console.WriteLine();
             Console.WriteLine("End Program");
@@ -32,15 +32,15 @@ namespace AlgoritmicsBookFW.Launcher
         {
             Console.WriteLine($"{message} method");
             IArray<long> arr1;
-            arr1 = new BubbleArray(maxSize);
+            arr1 = new BubbleArray<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Buble sort " + message);
 
-            arr1 = new SelectedArray(maxSize);
+            arr1 = new SelectedArray<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Selected sort " + message);
 
-            arr1 = new InsertSort(maxSize);
+            arr1 = new InsertSort<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Insert sort " + message);
             Console.WriteLine();
@@ -55,7 +55,7 @@ namespace AlgoritmicsBookFW.Launcher
             arr.Display();
             SortArr(arr, message);
             arr.Display();
-            var t = arr as InsertSort;
+            var t = arr as InsertSort<long>;
             if (t != null)
             {
                 Console.WriteLine(t.Median());
