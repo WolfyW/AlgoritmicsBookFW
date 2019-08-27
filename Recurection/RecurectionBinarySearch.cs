@@ -76,5 +76,23 @@ namespace AlgoritmicsBookFW.Recurection
                     return MathWithRec(serarchKey, lowerBound, current - 1);
             }
         }
+
+        public int OtherSearch(long key)
+        {
+            return BinarySearchOtherImplamentation(key, 0, array.Length - 1);
+        }
+
+        private int BinarySearchOtherImplamentation(long key, int lowerBound, int upperBound)
+        {
+            int current = (lowerBound + upperBound) / 2;
+            if (key == array[current])
+                return current;
+            if (lowerBound > upperBound)
+                return -1;
+            if (key > array[current])
+                return BinarySearchOtherImplamentation(key, current + 1, upperBound);
+            else
+                return BinarySearchOtherImplamentation(key, lowerBound, current - 1);
+        }
     }
 }

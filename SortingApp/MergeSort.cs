@@ -5,7 +5,8 @@ namespace AlgoritmicsBookFW.SortingApp
     public class MergeSort<T> : HArray<T> where T : IComparable<T>
     {
         public MergeSort(int maxSize) : base(maxSize)
-        {  }
+        { }
+
         public override void Sort()
         {
             T[] workSpace = new T[nElements];
@@ -63,6 +64,54 @@ namespace AlgoritmicsBookFW.SortingApp
                 arrayC[cDex++] = arrayA[aDex];
             while (bDex < sizeB)
                 arrayC[cDex++] = arrayB[bDex];
+        }
+
+        public T[] SortOther(T[] b)
+        {
+            a = b;
+            T[] temp = new T[a.Length];
+            MergeSortOtherImplemantation(temp, 0, a.Length - 1);
+            return a;
+        }
+
+        private void MergeSortOtherImplemantation(T[] workCopy, int lowBound, int upperBoud)
+        {
+            int middle = (lowBound + upperBoud) / 2;
+            if (lowBound == upperBoud)
+                return;
+            MergeSortOtherImplemantation(workCopy, lowBound, middle);
+            MergeSortOtherImplemantation(workCopy, middle + 1, upperBoud);
+            MergeOther(workCopy, lowBound, middle +1, upperBoud);
+        }
+
+        private void MergeOther(T[] tempA, int low, int middle, int upper)
+        {
+            int ptrA = low; // Начало первого массива
+            int mid = middle - 1; // Окончание первого массива
+            int ptrB = middle; // Начало второго массива
+            int n = upper - low + 1; // Количество элементов
+            int ptrC = 0; // индексация врменного массива
+
+            while (ptrA <= mid && ptrB <= upper)
+            {
+                if (a[ptrA].CompareTo(a[ptrB]) < 0)
+                    tempA[ptrC++] = a[ptrA++];
+                else
+                    tempA[ptrC++] = a[ptrB++];
+            }
+
+            while (ptrA <= mid)
+            {
+                tempA[ptrC++] = a[ptrA++];
+            }
+
+            while (ptrB <= upper)
+            {
+                tempA[ptrC++] = a[ptrB++];
+            }
+
+            for (int i = 0; i < n; i++)
+                a[low + i] = tempA[i];
         }
     }
 }

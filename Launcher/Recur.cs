@@ -22,9 +22,9 @@ namespace AlgoritmicsBookFW.Launcher
 
             MathRrcuration(fac);
 
-            Console.WriteLine("Anagramm");
-            Anagramm("cat");
-            Anagramm("Мария");
+            //Console.WriteLine("Anagramm");
+            //Anagramm("cat");
+            //Anagramm("Мария");
 
             Console.WriteLine("Recuraction Search");
             RecurectionBinarySearch search = new RecurectionBinarySearch();
@@ -32,6 +32,8 @@ namespace AlgoritmicsBookFW.Launcher
             search.MathWithoutRec(750);
             Console.WriteLine(search.ResultNotRec);
             Console.WriteLine(search.ResultRec);
+
+            Console.WriteLine(search.OtherSearch(950));
 
             HanoyTowerRecur tower = new HanoyTowerRecur(4, false);
         }
