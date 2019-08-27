@@ -1,4 +1,6 @@
-﻿namespace AlgoritmicsBookFW.Recurection
+﻿using AlgoritmicsBookFW.StackQuery;
+
+namespace AlgoritmicsBookFW.Recurection
 {
     public class TriangleNumbers : IRecurectionMath<long, int>
     {
@@ -29,6 +31,18 @@
             }
 
             return total;
+        }
+
+        public long MathWithStack(int number)
+        {
+            StackStruct<long> stack = new StackStruct<long>(500);
+            long answer = 0;
+            while (number > 0)
+                stack.Insert(number--);
+            while (!stack.IsEmpty())
+                answer += stack.Remove();
+
+            return answer;
         }
     }
 }

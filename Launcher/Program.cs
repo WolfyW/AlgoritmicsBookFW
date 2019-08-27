@@ -1,5 +1,5 @@
 ﻿using System;
-using AlgoritmicsBookFW.SortingApp;
+using AlgoritmicsBookFW.Recurection;
 
 namespace AlgoritmicsBookFW.Launcher
 {
@@ -21,9 +21,10 @@ namespace AlgoritmicsBookFW.Launcher
 
             //Recur re = new Recur();
             //re.Run();
-            MergeSort<long> rec = new MergeSort<long>(2);
-            long[] tempA = new long[] {9, 4, 2, 7, 6, 1, 3, 5, 8, 10};
-            var t = rec.SortOther(tempA);
+
+            RecursivePow pow = new RecursivePow(new PowNumbers(3, 18));
+            var t = pow.ResultRec;
+
 
             Console.Read();
         }

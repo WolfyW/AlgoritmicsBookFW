@@ -66,9 +66,8 @@ namespace AlgoritmicsBookFW.SortingApp
                 arrayC[cDex++] = arrayB[bDex];
         }
 
-        public T[] SortOther(T[] b)
+        public T[] SortOther()
         {
-            a = b;
             T[] temp = new T[a.Length];
             MergeSortOtherImplemantation(temp, 0, a.Length - 1);
             return a;

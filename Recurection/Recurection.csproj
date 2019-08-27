@@ -47,8 +47,15 @@
     <Compile Include="HanoyTower\Stick.cs" />
     <Compile Include="IRecurectionMath.cs" />
     <Compile Include="RecurectionBinarySearch.cs" />
+    <Compile Include="RecursivePow.cs" />
     <Compile Include="TriangleNumbers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StackQuery\StackQuery.csproj">
+      <Project>{1f100f00-f475-4ec6-8b09-c7d1c3a699a7}</Project>
+      <Name>StackQuery</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

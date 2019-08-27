@@ -19,6 +19,11 @@ namespace AlgoritmicsBookFW.Launcher
 
             Console.WriteLine();
             Console.WriteLine("End Program");
+
+            MergeSort<long> rec = new MergeSort<long>(2);
+            long[] tempA = new long[] { 9, 4, 2, 7, 6, 1, 3, 5, 8, 10 };
+            var t = rec.SortOther();
+            
             Console.Read();
         }
 
@@ -43,7 +48,6 @@ namespace AlgoritmicsBookFW.Launcher
             arr1 = new InsertSort<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Insert sort " + message);
-            Console.WriteLine();
 
             arr1 = new MergeSort<long>(maxSize);
             Fill(arr1, maxSize);
@@ -159,7 +163,6 @@ namespace AlgoritmicsBookFW.Launcher
 
             TimeSpan span = end - now;
             Console.WriteLine(message + ": " + span.TotalSeconds);
-
         }
     }
 }
