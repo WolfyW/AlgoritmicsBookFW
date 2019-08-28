@@ -22,8 +22,10 @@ namespace AlgoritmicsBookFW.Launcher
             //Recur re = new Recur();
             //re.Run();
 
-            RecursivePow pow = new RecursivePow(new PowNumbers(3, 18));
+            RecursivePow pow = new RecursivePow(new PowNumbers(2, 21));
             var t = pow.ResultRec;
+            var t1 = pow.ResultNotRec;
+
 
 
             Console.Read();
