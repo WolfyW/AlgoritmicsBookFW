@@ -7,6 +7,9 @@ namespace AlgoritmicsBookFW.SortingApp
         public MergeSort(int maxSize) : base(maxSize)
         { }
 
+        public MergeSort(T[] array) : base(array)
+        { }
+
         public override void Sort()
         {
             T[] workSpace = new T[nElements];
@@ -111,6 +114,11 @@ namespace AlgoritmicsBookFW.SortingApp
 
             for (int i = 0; i < n; i++)
                 a[low + i] = tempA[i];
+        }
+
+        public T[] ToArray()
+        {
+            return a;
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayExetension.cs" />
     <Compile Include="BubbleSort.cs" />
     <Compile Include="HArray.cs" />
     <Compile Include="InsertSort.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelectedArray.cs" />
     <Compile Include="ShellSort.cs" />
+    <Compile Include="SortingArr.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ISortFunction\ISortFunction.csproj">

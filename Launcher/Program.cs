@@ -1,5 +1,8 @@
 ﻿using System;
 using AlgoritmicsBookFW.Recurection;
+using AlgoritmicsBookFW.Recurection.Exesizes;
+
+using AlgoritmicsBookFW.SortingApp;
 
 namespace AlgoritmicsBookFW.Launcher
 {
@@ -26,7 +29,9 @@ namespace AlgoritmicsBookFW.Launcher
             var t = pow.ResultRec;
             var t1 = pow.ResultNotRec;
 
-
+            int[] a = new[] {11, 8, 7, 6, 5};
+            BackpackPickUp p = new BackpackPickUp();
+            p.Pick(a, 20);
 
             Console.Read();
         }

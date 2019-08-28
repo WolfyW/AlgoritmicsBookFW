@@ -15,6 +15,12 @@ namespace AlgoritmicsBookFW.SortingApp
             a = new T[maxElemnts + 1];
         }
 
+        public HArray(T[] array)
+        {
+            a = array;
+            nElements = a.Length;
+        }
+
         public bool Remove(T item)
         {
             int i = -1;
