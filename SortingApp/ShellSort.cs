@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace AlgoritmicsBookFW.SortingApp
 {
-    class ShellSort
+    class ShellSort<T> : HArray<T> where T : IComparable<T>
     {
+        public ShellSort(int maxElemnts) : base(maxElemnts)
+        { }
+
+        public ShellSort(T[] array) : base(array)
+        { }
+
+        public override void Sort()
+        {
+            throw new NotImplementedException();
+
+
+        }
     }
 }

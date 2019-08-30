@@ -24,6 +24,7 @@ namespace AlgoritmicsBookFW.Recurection.Exesizes
 
     public class BackpackPickUp
     {
+        // TODO доделать задачу с рюкзаком
         private int[] weight;
 
         public void Pick(int[] weights, int needWeight)
@@ -33,10 +34,8 @@ namespace AlgoritmicsBookFW.Recurection.Exesizes
             RecFind(0, 0, needWeight);
         }
 
-        public void RecFind(int ptr, int ptr2, int weightNeed)
+        private void RecFind(int ptr, int ptr2, int weightNeed)
         {
-
-
             if (weight[ptr] < weightNeed)
             {
                 RecFind(++ptr, ptr2, weightNeed - weight[ptr]);
@@ -46,8 +45,6 @@ namespace AlgoritmicsBookFW.Recurection.Exesizes
             {
                 RecFind(++ptr, ptr2, weightNeed);
             }
-
-
         }
     }
 }
