@@ -10,8 +10,8 @@ namespace AlgoritmicsBookFW.Launcher
     {
         static void Main(string[] args)
         {
-            //Sort sort = new Sort();
-            //sort.Run();
+            Sort sort = new Sort();
+            sort.Run();
 
             //StackQuery stack = new StackQuery();
             //stack.Run();
@@ -25,13 +25,13 @@ namespace AlgoritmicsBookFW.Launcher
             //Recur re = new Recur();
             //re.Run();
 
-            RecursivePow pow = new RecursivePow(new PowNumbers(2, 21));
-            var t = pow.ResultRec;
-            var t1 = pow.ResultNotRec;
+            //RecursivePow pow = new RecursivePow(new PowNumbers(2, 21));
+            //var t = pow.ResultRec;
+            //var t1 = pow.ResultNotRec;
 
-            int[] a = new[] {11, 8, 7, 6, 5};
-            BackpackPickUp p = new BackpackPickUp();
-            p.Pick(a, 20);
+            //int[] a = new[] {11, 8, 7, 6, 5};
+            //BackpackPickUp p = new BackpackPickUp();
+            //p.Pick(a, 20);
 
             Console.Read();
         }

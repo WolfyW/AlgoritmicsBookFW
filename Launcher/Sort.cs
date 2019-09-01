@@ -52,6 +52,10 @@ namespace AlgoritmicsBookFW.Launcher
             arr1 = new MergeSort<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Merge sort " + message);
+
+            arr1 = new ShellSort<long>(maxSize);
+            Fill(arr1, maxSize);
+            SortArr(arr1, "Shell sort " + message);
             Console.WriteLine();
         }
 
@@ -70,8 +74,7 @@ namespace AlgoritmicsBookFW.Launcher
                 Console.WriteLine(t.Median());
                 t.Nodups();
                 t.Display();
-            }
-                
+            }                
         }
 
         /// <summary>
