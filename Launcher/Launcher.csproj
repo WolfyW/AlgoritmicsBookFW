@@ -75,6 +75,10 @@
       <Project>{1f100f00-f475-4ec6-8b09-c7d1c3a699a7}</Project>
       <Name>StackQuery</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TreeStruct\TreeStruct.csproj">
+      <Project>{45c4d306-3127-42a3-83e1-563e47f1c10d}</Project>
+      <Name>TreeStruct</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

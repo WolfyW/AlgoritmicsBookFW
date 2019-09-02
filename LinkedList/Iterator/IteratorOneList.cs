@@ -1,7 +1,6 @@
-﻿using AlgoritmicsBookFW.LinkedList.Iterator;
-using AlgoritmicsBookFW.LinkedList.Nodes;
+﻿using AlgoritmicsBookFW.LinkedList.Nodes;
 
-namespace AlgoritmicsBookFW.LinkedList.Iterators
+namespace AlgoritmicsBookFW.LinkedList.Iterator
 {
     public class IteratorOneList<T> : IIterator<T>
     {

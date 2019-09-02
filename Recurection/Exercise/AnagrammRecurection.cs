@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace AlgoritmicsBookFW.Recurection
+namespace AlgoritmicsBookFW.Recurection.Exercise
 {
     public class AnagrammRecurection
     {

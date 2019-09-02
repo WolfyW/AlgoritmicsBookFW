@@ -1,8 +1,7 @@
 ﻿using System;
 using AlgoritmicsBookFW.Recurection;
-using AlgoritmicsBookFW.Recurection.Exesizes;
-
 using AlgoritmicsBookFW.SortingApp;
+using AlgoritmicsBookFW.TreeStruct;
 
 namespace AlgoritmicsBookFW.Launcher
 {
@@ -10,8 +9,16 @@ namespace AlgoritmicsBookFW.Launcher
     {
         static void Main(string[] args)
         {
-            Sort sort = new Sort();
-            sort.Run();
+            Tree<long> tree = new Tree<long>();
+            Random rnd = new Random();
+            for (int i = 0; i < 25; i++)
+            {
+                tree.Insert(rnd.Next(0,100));
+            }
+            tree.Display();
+
+            //Sort sort = new Sort();
+            //sort.Run();
 
             //StackQuery stack = new StackQuery();
             //stack.Run();

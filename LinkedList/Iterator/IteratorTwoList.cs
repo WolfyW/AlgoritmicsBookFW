@@ -23,9 +23,9 @@ namespace AlgoritmicsBookFW.LinkedList.Iterator
         {
             NodeTwo<T> newNode = new NodeTwo<T>(item);
             _priviois.Next = newNode;
-            newNode.Previus = _priviois;
+            newNode.Previous = _priviois;
 
-            _current.Previus = newNode;
+            _current.Previous = newNode;
             newNode.Next = _current;
         }
 
@@ -35,10 +35,10 @@ namespace AlgoritmicsBookFW.LinkedList.Iterator
             var temp = _current.Next;
 
             _current.Next = newNode;
-            newNode.Previus = _current;
+            newNode.Previous = _current;
 
             newNode.Next = temp;
-            temp.Previus = newNode;
+            temp.Previous = newNode;
         }
 
         public bool MoveNext()

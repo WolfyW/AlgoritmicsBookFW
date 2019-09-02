@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-using AlgoritmicsBookFW.SortingApp;
-
-namespace AlgoritmicsBookFW.Recurection.Exesizes
+namespace AlgoritmicsBookFW.Recurection.Exercise
 {
     class Backpack
     {

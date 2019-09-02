@@ -1,5 +1,5 @@
 ﻿using System;
-using AlgoritmicsBookFW.LinkedList.Iterators;
+using AlgoritmicsBookFW.LinkedList.Iterator;
 using AlgoritmicsBookFW.LinkedList.Nodes;
 
 namespace AlgoritmicsBookFW.LinkedList

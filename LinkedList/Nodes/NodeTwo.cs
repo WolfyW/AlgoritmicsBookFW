@@ -5,7 +5,7 @@
         public T Data { get; set; }
 
         public NodeTwo<T> Next { get; set; }
-        public NodeTwo<T> Previus { get; set; }
+        public NodeTwo<T> Previous { get; set; }
 
         public NodeTwo(T data)
         {

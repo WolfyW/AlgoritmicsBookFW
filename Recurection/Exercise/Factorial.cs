@@ -1,4 +1,4 @@
-﻿namespace AlgoritmicsBookFW.Recurection
+﻿namespace AlgoritmicsBookFW.Recurection.Exercise
 {
     public class Factorial : IRecurectionMath<long, int>
     {

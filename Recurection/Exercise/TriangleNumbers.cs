@@ -1,6 +1,6 @@
 ﻿using AlgoritmicsBookFW.StackQuery;
 
-namespace AlgoritmicsBookFW.Recurection
+namespace AlgoritmicsBookFW.Recurection.Exercise
 {
     public class TriangleNumbers : IRecurectionMath<long, int>
     {

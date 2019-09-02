@@ -1,5 +1,6 @@
 ﻿using System;
 using AlgoritmicsBookFW.Recurection;
+using AlgoritmicsBookFW.Recurection.Exercise;
 using AlgoritmicsBookFW.Recurection.HanoyTower;
 
 

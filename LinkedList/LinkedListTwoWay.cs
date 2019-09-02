@@ -19,7 +19,7 @@ namespace AlgoritmicsBookFW.LinkedList
             }
             else
             {
-                First.Previus = newNode;
+                First.Previous = newNode;
             }
             newNode.Next = First;
             First = newNode;
@@ -37,7 +37,7 @@ namespace AlgoritmicsBookFW.LinkedList
             {
                 _last.Next = newNode;
             }
-            newNode.Previus = _last;
+            newNode.Previous = _last;
             _last = newNode;
         }
 
@@ -50,7 +50,7 @@ namespace AlgoritmicsBookFW.LinkedList
             if (First.Next == null)
                 _last = null;
             else
-                First.Next.Previus = null;
+                First.Next.Previous = null;
 
             First = First.Next;
 
@@ -67,8 +67,8 @@ namespace AlgoritmicsBookFW.LinkedList
             if (First.Next == null)
                 First = null;
             else
-                _last.Previus.Next = null;
-            _last = _last.Previus;
+                _last.Previous.Next = null;
+            _last = _last.Previous;
 
             return node.Data;
         }
@@ -88,12 +88,12 @@ namespace AlgoritmicsBookFW.LinkedList
             if (node == First)
                 First = First.Next;
             else
-                node.Previus.Next = node.Next;
+                node.Previous.Next = node.Next;
 
             if (node == _last)
-                _last = node.Previus;
+                _last = node.Previous;
             else
-                node.Next.Previus = node.Previus;
+                node.Next.Previous = node.Previous;
         }
 
         public bool IsEmpty()
