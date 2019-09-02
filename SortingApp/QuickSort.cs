@@ -16,22 +16,52 @@ namespace AlgoritmicsBookFW.SortingApp
 
         public override void Sort()
         {
-            RecQuickSort(0, nElements - 1);
+            RecQuickSort3(0, nElements - 1);
+        }
+        
+        private void RecQuickSort1(int left, int right)
+        {
+            if (right - left <= 0) // Если размер равен 1,
+                return; // массив отсортирован.
+            else // Для размера 2 и более
+            {
+                // Разбиение диапазона
+                long pivot = a[right];
+                int partition = PartitionIt1(left, right, pivot);
+                RecQuickSort1(left, partition - 1); // Сортировка левой части
+                RecQuickSort1(partition + 1, right); // Сортировка правой части
+            }
+        }
+        
+        private void RecQuickSort2(int left, int right)
+        {
+            int size = right - left + 1;
+            if (size <= 3)
+            {
+                ManualSort(left, right);
+            }
+            else
+            {
+                long pivot = Median(left, right);
+                int partition = PartitionIt3(left, right, pivot);
+                RecQuickSort2(left, partition - 1); // Сортировка левой части
+                RecQuickSort2(partition + 1, right); // Сортировка правой части
+            }
         }
 
-        private void RecQuickSort(int left, int right)
+        private void RecQuickSort3(int left, int right)
         {
             int size = right - left + 1;
             if (size < 10)
             {
                 InsertSort(left, right);
             }
-            else 
+            else
             {
                 long pivot = Median(left, right);
-                int partition = PartitionIt(left, right, pivot);
-                RecQuickSort(left, partition - 1); // Сортировка левой части
-                RecQuickSort(partition + 1, right); // Сортировка правой части
+                int partition = PartitionIt3(left, right, pivot);
+                RecQuickSort3(left, partition - 1); // Сортировка левой части
+                RecQuickSort3(partition + 1, right); // Сортировка правой части
             }
         }
 
@@ -52,7 +82,7 @@ namespace AlgoritmicsBookFW.SortingApp
             return a[right - 1];
         }
 
-        private int PartitionIt(int left, int right, long pivot)
+        private int PartitionIt3(int left, int right, long pivot)
         {
             int leftPtr = left;
             int rigthPtr = right - 1;
@@ -68,6 +98,25 @@ namespace AlgoritmicsBookFW.SortingApp
                     Swap(leftPtr, rigthPtr);
             }
             Swap(leftPtr, right - 1);
+            return leftPtr;
+        }
+
+        private int PartitionIt1(int left, int right, long pivot)
+        {
+            int leftPtr = left - 1;
+            int rigthPtr = right;
+
+            while (true)
+            {
+                while (a[++leftPtr] < pivot) ;
+                while (rigthPtr > 0 && a[--rigthPtr] > pivot) ;
+
+                if (leftPtr >= rigthPtr)
+                    break;
+                else
+                    Swap(leftPtr, rigthPtr);
+            }
+            Swap(leftPtr, right);
             return leftPtr;
         }
 
