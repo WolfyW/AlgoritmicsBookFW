@@ -24,7 +24,6 @@ namespace AlgoritmicsBookFW.SortingApp
             IsSorted = true;
         }
 
-
         public double Median()
         {
             if (!IsSorted)
@@ -73,6 +72,5 @@ namespace AlgoritmicsBookFW.SortingApp
             }
             nElements -= count;
         }
-
     }
 }

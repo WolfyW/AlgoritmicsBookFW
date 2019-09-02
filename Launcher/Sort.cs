@@ -9,9 +9,13 @@ namespace AlgoritmicsBookFW.Launcher
     {
         public void Run(string[] args = null)
         {
-            int maxSize = 50000;
-
+            int maxSize = 20000;
+            ExecuteSortWithDisplay(new BubbleArray<long>(25), FillRandomArray, 25, "Bubble sort Random");
+            ExecuteSortWithDisplay(new SelectedArray<long>(25), FillRandomArray, 25, "Selected sort Random");
+            ExecuteSortWithDisplay(new InsertSort<long>(25), FillRandomArray, 25, "Insert sort Random");
             ExecuteSortWithDisplay(new MergeSort<long>(25), FillRandomArray, 25, "Merge sort Random");
+            ExecuteSortWithDisplay(new ShellSort<long>(25), FillRandomArray, 25, "Shell sort Random");
+            ExecuteSortWithDisplay(new QuickSort(25), FillRandomArray, 25, "Quick sort Random");
 
             ExecuteSort(FillRandomArray, maxSize, "Random");
             ExecuteSort(FillArr, maxSize, "Ended");
@@ -37,17 +41,17 @@ namespace AlgoritmicsBookFW.Launcher
         {
             Console.WriteLine($"{message} method");
             IArray<long> arr1;
-            arr1 = new BubbleArray<long>(maxSize);
-            Fill(arr1, maxSize);
-            SortArr(arr1, "Buble sort " + message);
+            //arr1 = new BubbleArray<long>(maxSize);
+            //Fill(arr1, maxSize);
+            //SortArr(arr1, "Buble sort " + message);
 
-            arr1 = new SelectedArray<long>(maxSize);
-            Fill(arr1, maxSize);
-            SortArr(arr1, "Selected sort " + message);
+            //arr1 = new SelectedArray<long>(maxSize);
+            //Fill(arr1, maxSize);
+            //SortArr(arr1, "Selected sort " + message);
 
-            arr1 = new InsertSort<long>(maxSize);
-            Fill(arr1, maxSize);
-            SortArr(arr1, "Insert sort " + message);
+            //arr1 = new InsertSort<long>(maxSize);
+            //Fill(arr1, maxSize);
+            //SortArr(arr1, "Insert sort " + message);
 
             arr1 = new MergeSort<long>(maxSize);
             Fill(arr1, maxSize);
@@ -56,6 +60,10 @@ namespace AlgoritmicsBookFW.Launcher
             arr1 = new ShellSort<long>(maxSize);
             Fill(arr1, maxSize);
             SortArr(arr1, "Shell sort " + message);
+
+            arr1 = new QuickSort(maxSize);
+            Fill(arr1, maxSize);
+            SortArr(arr1, "Quick sort " + message);
             Console.WriteLine();
         }
 
@@ -68,13 +76,15 @@ namespace AlgoritmicsBookFW.Launcher
             arr.Display();
             SortArr(arr, message);
             arr.Display();
-            var t = arr as InsertSort<long>;
-            if (t != null)
-            {
-                Console.WriteLine(t.Median());
-                t.Nodups();
-                t.Display();
-            }                
+            //var t = arr as InsertSort<long>;
+            //if (t != null)
+            //{
+            //    Console.WriteLine(t.Median());
+            //    t.Nodups();
+            //    t.Display();
+            //}
+            
+            Console.WriteLine("\n############ END ############\n");
         }
 
         /// <summary>
