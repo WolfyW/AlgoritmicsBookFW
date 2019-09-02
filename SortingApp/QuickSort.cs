@@ -18,38 +18,96 @@ namespace AlgoritmicsBookFW.SortingApp
         {
             RecQuickSort(0, nElements - 1);
         }
-        
+
         private void RecQuickSort(int left, int right)
         {
-            if (right - left <= 0) // Если размер равен 1,
-                return; // массив отсортирован.
-            else // Для размера 2 и более
+            int size = right - left + 1;
+            if (size < 10)
             {
-                // Разбиение диапазона
-                long pivot = a[right];
+                InsertSort(left, right);
+            }
+            else 
+            {
+                long pivot = Median(left, right);
                 int partition = PartitionIt(left, right, pivot);
                 RecQuickSort(left, partition - 1); // Сортировка левой части
                 RecQuickSort(partition + 1, right); // Сортировка правой части
             }
         }
 
+        private long Median(int left, int right)
+        {
+            int center = (left + right) / 2;
+
+            if (a[left] > a[center])
+                Swap(left, center);
+
+            if (a[left] > a[right])
+                Swap(right, left);
+
+            if (a[center] > a[right])
+                Swap(right, center);
+
+            Swap(center, right - 1);
+            return a[right - 1];
+        }
+
         private int PartitionIt(int left, int right, long pivot)
         {
-            int leftPtr = left - 1;
-            int rigthPtr = right;
+            int leftPtr = left;
+            int rigthPtr = right - 1;
 
             while (true)
             {
                 while (a[++leftPtr] < pivot) ;
-                while (rigthPtr > 0 && a[--rigthPtr] > pivot) ;
+                while (a[--rigthPtr] > pivot) ;
 
                 if (leftPtr >= rigthPtr)
                     break;
                 else
                     Swap(leftPtr, rigthPtr);
             }
-            Swap(leftPtr, right);
+            Swap(leftPtr, right - 1);
             return leftPtr;
+        }
+
+        private void InsertSort(int left, int right)
+        {
+            int outer, inner;
+            for (outer = left + 1; outer < right; outer++)
+            {
+                long temp = a[outer];
+                inner = outer;
+                while (inner > left && a[inner - 1] >= temp)
+                {
+                    a[inner] = a[inner - 1];
+                    inner--;
+                }
+                a[inner] = temp;
+            }
+            IsSorted = true;
+        }
+
+        private void ManualSort(int left, int right)
+        {
+            int size = right - left + 1;
+            int center = right - 1;
+            if (size <= 1)
+                return;
+            if (size == 2)
+            {
+                if (a[left] > a[right])
+                    Swap(left, right);
+            }
+            else
+            {
+                if (a[left] > a[center])
+                    Swap(left, center);
+                if (a[left] > a[right])
+                    Swap(left, right);
+                if (a[center] > a[right])
+                    Swap(center, right);
+            }
         }
 
         private void Swap(int dex1, int dex2) // Перестановка двух элементов

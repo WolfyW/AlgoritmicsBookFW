@@ -9,7 +9,7 @@ namespace AlgoritmicsBookFW.Launcher
     {
         public void Run(string[] args = null)
         {
-            int maxSize = 20000;
+            int maxSize = 100000;
             ExecuteSortWithDisplay(new BubbleArray<long>(25), FillRandomArray, 25, "Bubble sort Random");
             ExecuteSortWithDisplay(new SelectedArray<long>(25), FillRandomArray, 25, "Selected sort Random");
             ExecuteSortWithDisplay(new InsertSort<long>(25), FillRandomArray, 25, "Insert sort Random");
