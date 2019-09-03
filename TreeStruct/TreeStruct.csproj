@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NodeTree.cs" />
+    <Compile Include="BinaryTree.cs" />
+    <Compile Include="Node\INode.cs" />
+    <Compile Include="Node\NodeRBTree.cs" />
+    <Compile Include="Node\NodeTree.cs" />
+    <Compile Include="RedBlackTree.cs" />
     <Compile Include="Tree.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TreeAbstract.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ISortFunction\ISortFunction.csproj">
@@ -50,6 +55,7 @@
       <Name>ISortFunction</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

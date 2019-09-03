@@ -50,6 +50,7 @@
     <Compile Include="Recur.cs" />
     <Compile Include="Sort.cs" />
     <Compile Include="StackQuery.cs" />
+    <Compile Include="TreeStruct.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
