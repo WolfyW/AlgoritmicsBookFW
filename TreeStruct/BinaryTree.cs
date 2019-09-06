@@ -3,11 +3,12 @@ using AlgoritmicsBookFW.TreeStruct.Node;
 
 namespace AlgoritmicsBookFW.TreeStruct
 {
-    public abstract class BinaryTree<T> : TreeAbstract<T> where T : IComparable<T>
+    public abstract class BinaryTree<TData, TNode> : TreeAbstract<TData, TNode> where TData : IComparable<TData>
+                                                                  where TNode : INode<TData, TNode>
     {
-        public override bool Find(T item)
+        public override bool Find(TData item)
         {
-            INode<T> current = RootNode;
+            TNode current = RootNode;
             while (current.Data.CompareTo(item) != 0)
             {
                 if (item.CompareTo(current.Data) < 0)
@@ -21,7 +22,7 @@ namespace AlgoritmicsBookFW.TreeStruct
             return true;
         }
 
-        public T Max()
+        public TData Max()
         {
             var current = RootNode;
             var previous = current;
@@ -34,7 +35,7 @@ namespace AlgoritmicsBookFW.TreeStruct
             return previous.Data;
         }
 
-        public T Min()
+        public TData Min()
         {
             var current = RootNode;
             var previous = current;

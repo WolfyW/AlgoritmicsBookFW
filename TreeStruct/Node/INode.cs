@@ -1,9 +1,9 @@
 ﻿namespace AlgoritmicsBookFW.TreeStruct.Node
 {
-    public interface INode<T>
+    public interface INode<T, TV> where TV : INode<T, TV>
     {
         T Data { get; set; }
-        INode<T> Left { get; set; }
-        INode<T> Right { get; set; }
+        TV Left { get; set; }
+        TV Right { get; set; }
     }
 }

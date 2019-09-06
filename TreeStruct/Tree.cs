@@ -3,18 +3,18 @@ using AlgoritmicsBookFW.TreeStruct.Node;
 
 namespace AlgoritmicsBookFW.TreeStruct
 {
-    public class Tree<T> : BinaryTree<T> where T : IComparable<T>
+    public class Tree<TData> : BinaryTree<TData, NodeTree<TData>> where TData : IComparable<TData>
     {
-        public override void Insert(T item)
+        public override void Insert(TData item)
         {
-            var newNode = new NodeTree<T>(item);
+            var newNode = new NodeTree<TData>(item);
 
             if (RootNode == null)
                 RootNode = newNode;
             else
             {
-                INode<T> privious = RootNode;
-                INode<T> current = RootNode;
+                NodeTree<TData> privious = RootNode;
+                NodeTree<TData> current = RootNode;
                 while (true)
                 {
                     privious = current;
@@ -37,14 +37,13 @@ namespace AlgoritmicsBookFW.TreeStruct
                         }
                     }
                 }
-
             }
         }
 
-        public override bool Remove(T item)
+        public override bool Remove(TData item)
         {
             bool isLeftChild;
-            INode<T> parent;
+            NodeTree<TData> parent;
 
             var current = FindItem(item, out parent, out isLeftChild);
             if (current == null)
@@ -91,7 +90,7 @@ namespace AlgoritmicsBookFW.TreeStruct
             }
             else
             {
-                INode<T> succesor = GetSuccessor(current);
+                NodeTree<TData> succesor = GetSuccessor(current);
                 if (current == RootNode)
                     RootNode = succesor;
                 else if (isLeftChild)
@@ -105,11 +104,11 @@ namespace AlgoritmicsBookFW.TreeStruct
             return true;
         }
 
-        private INode<T> GetSuccessor(INode<T> delNode)
+        private NodeTree<TData> GetSuccessor(NodeTree<TData> delNode)
         {
-            INode<T> sucParent = delNode;
-            INode<T> suc = delNode;
-            INode<T> currnet = delNode.Right;
+            NodeTree<TData> sucParent = delNode;
+            NodeTree<TData> suc = delNode;
+            NodeTree<TData> currnet = delNode.Right;
 
             while (currnet != null)
             {
@@ -123,13 +122,12 @@ namespace AlgoritmicsBookFW.TreeStruct
                 sucParent.Left = suc.Right;
                 suc.Right = delNode.Right;
             }
-
             return suc;
         }
 
-        private INode<T> FindItem(T item, out INode<T> parent, out bool isLeftChild)
+        private NodeTree<TData> FindItem(TData item, out NodeTree<TData> parent, out bool isLeftChild)
         {
-            INode<T> current = RootNode;
+            NodeTree<TData> current = RootNode;
             parent = RootNode;
             isLeftChild = true;
 
@@ -153,7 +151,7 @@ namespace AlgoritmicsBookFW.TreeStruct
             return current;
         }
 
-        private INode<T> FindItem(T item, out INode<T> parent)
+        private NodeTree<TData> FindItem(TData item, out NodeTree<TData> parent)
         {
             bool isLeft = true;
             var temp = FindItem(item, out parent, out isLeft);

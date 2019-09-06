@@ -1,14 +1,15 @@
 ﻿namespace AlgoritmicsBookFW.TreeStruct.Node
 {
-    public class NodeRBTree<T> : INode<T>
+    public class NodeRbTree<TData> : INode<TData, NodeRbTree<TData>>
     {
         public bool IsBlack { get; set; }
 
-        public T Data { get; set; }
-        public INode<T> Left { get; set; }
-        public INode<T> Right { get; set; }
+        public TData Data { get; set; }
+        public NodeRbTree<TData> Left { get; set; }
+        public NodeRbTree<TData> Right { get; set; }
+        public NodeRbTree<TData> Parent { get; set; }
 
-        public NodeRBTree(T data)
+        public NodeRbTree(TData data)
         { }
     }
 }

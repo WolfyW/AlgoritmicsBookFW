@@ -4,20 +4,21 @@ using AlgoritmicsBookFW.TreeStruct.Node;
 
 namespace AlgoritmicsBookFW.TreeStruct
 {
-    public abstract class TreeAbstract<T> : ITree<T> where T : IComparable<T>
+    public abstract class TreeAbstract<TData, TNode> : ITree<TData> where TData : IComparable<TData>
+                                                         where TNode : INode<TData, TNode>
     {
-        protected INode<T> RootNode;
+        protected TNode RootNode;
 
-        public abstract bool Find(T item);
-        public abstract void Insert(T item);
-        public abstract bool Remove(T item);
+        public abstract bool Find(TData item);
+        public abstract void Insert(TData item);
+        public abstract bool Remove(TData item);
 
         public void Display()
         {
             WriteInfo(RootNode);
         }
 
-        private void WriteInfo(INode<T> current)
+        private void WriteInfo(TNode current)
         {
             if (current != null)
             {
